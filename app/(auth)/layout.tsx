@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function AuthDashboard({children}: {children: React.ReactNode}) {
+function AuthDashboard({ children }: { children: React.ReactNode }) {
   return (
-    <div className='h-screen w-screen flex items-center justify-center'>
-        <main className="">
-            {children}
-        </main>
+    <div className="h-screen w-screen flex items-center justify-center">
+      <main className="">{children}</main>
     </div>
-  )
+  );
 }
 
-export default AuthDashboard
+export default AuthDashboard;
