@@ -20,6 +20,7 @@ import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import { toast } from "sonner";
 
 function Hero() {
   const [userInput, setUserInput] = useState<string>("");
@@ -51,11 +52,12 @@ function Hero() {
 
       // Handle successful creation
       if (result.data?.success) {
+        toast.success("Project successfully created");
         router.push(`/project/${projectId}`);
       }
     } catch (error) {
       console.error("Failed to create project:", error);
-      // Handle error (show toast, etc.)
+      toast.error("Failed to create projetct");
     } finally {
       setLoading(false);
     }
