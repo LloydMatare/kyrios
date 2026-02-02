@@ -51,10 +51,12 @@ function Hero() {
       });
 
       // Handle successful creation
-      if (result.data?.success) {
-        toast.success("Project successfully created");
-        router.push(`/project/${projectId}`);
-      }
+
+      toast.success("Project successfully created");
+      router.push(`/projects/${projectId}`);
+
+      // Use the result data
+      console.log("Project created:", result.data);
     } catch (error) {
       console.error("Failed to create project:", error);
       toast.error("Failed to create projetct");
